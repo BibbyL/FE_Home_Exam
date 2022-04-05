@@ -1,0 +1,21 @@
+<nz-table #rowSelectionTable [nzPageSize]="100" [nzBordered]="true" [nzFrontPagination]="false"
+  [nzShowPagination]="false" [nzScroll]="{ y: '75vh' }" nzSize="small" [nzData]="defectData"
+  (nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+  <thead>
+    <tr>
+      <th nzWidth="50px"></th>
+      <th nzWidth="80px">Index</th>
+      <th nzWidth="80px">x</th>
+      <th nzWidth="80px">y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data; let idx=index">
+      <td [nzChecked]="setOfCheckedId.has(data.uuid)" [nzDisabled]="false"
+        (nzCheckedChange)="onItemChecked(data, $event)"></td>
+      <td>{{ idx+1 }}</td>
+      <td>{{ data.x }}</td>
+      <td>{{ data.y }}</td>
+    </tr>
+  </tbody>
+</nz-table>

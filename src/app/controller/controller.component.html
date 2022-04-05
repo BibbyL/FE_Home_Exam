@@ -1,0 +1,40 @@
+<div class="controller">
+
+  <div nz-row>
+
+    <div nz-col nzSpan="8">
+
+      <table>
+
+        <tr>
+          <td class="key">uuid</td>
+          <td class="value"> {{selectedDefect.uuid!=''? selectedDefect.uuid: '-'}}</td>
+
+        </tr>
+        <tr>
+          <td class="key">X</td>
+          <td class="value"> {{selectedDefect.uuid !=''? selectedDefect.x: '-'}}</td>
+
+        </tr>
+        <tr>
+          <td class="key">Y</td>
+          <td class="value"> {{selectedDefect.uuid !='' ? selectedDefect.y: '-'}}</td>
+
+        </tr>
+        <tr>
+          <td class="key">Severity</td>
+          <td class="value">{{selectedDefect.uuid !=''  ? selectedDefect.severity: '-'}}</td>
+
+        </tr>
+
+      </table>
+    </div>
+    <div nz-col nzSpan="16">
+
+      <nz-slider [nzTooltipVisible]="'always'" [nzMarks]="marks" [(ngModel)]="value" [nzMin]="10" [nzMax]="100"
+        (nzOnAfterChange)="onSlideSeverity($event)"></nz-slider>
+
+    </div>
+
+  </div>
+</div>

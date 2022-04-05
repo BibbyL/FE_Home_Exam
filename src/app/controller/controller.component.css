@@ -1,0 +1,14 @@
+.controller {
+  margin: auto;
+  width: 90%;
+}
+
+
+.key {
+  font-weight: bold;
+}
+
+.value {
+  text-align: right; 
+  width: 50%
+}

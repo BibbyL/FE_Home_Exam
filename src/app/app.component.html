@@ -1,0 +1,21 @@
+<div nz-row>
+  <div nz-col nzSpan="8">
+    <nz-card class="table">
+      <app-table [defectData]="defectData_display" [selectedDefect]="selectedDefect"
+        (onSelectDefect)="onSelectDefect($event)"></app-table>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="16">
+    <nz-card class="table">
+      <div style="height:70vh">
+        <app-defect [defectData]="defectData_display" [selectedDefect]="selectedDefect"
+          (onClickDefect)="onSelectDefect($event)"></app-defect>
+      </div>
+
+      <div style="height:10vh">
+        <app-controller [selectedDefect]="selectedDefect" (onChangeSeverity)="onChangeSeverity($event)">
+        </app-controller>
+      </div>
+    </nz-card>
+  </div>
+</div>
